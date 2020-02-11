@@ -10,6 +10,11 @@ var paths = {
     appCSS: 'app/**/*.css',
     appSASS: 'app/**/*.sass',
     appJS: 'app/**/*.js',
+    appImg: [
+        'app/**/*.svg',
+        'app/**/*.png',
+        'app/**/*.jpg'
+    ],
     appIndex: 'app/index.html',
 
     jQuery: "node_modules/jquery/dist/jquery.min.js",
@@ -45,11 +50,15 @@ gulp.task('js', function () {
     return gulp.src([paths.appJS, paths.bootstrapJS, paths.jQuery], paths.srcPathOptions).pipe(gulp.dest(paths.distJSPath));;
 });
 
+gulp.task('img', function () {
+    return gulp.src(paths.appImg, paths.srcPathOptions).pipe(gulp.dest(paths.dist));
+});
+
 gulp.task('html', function () {
     return gulp.src(paths.appHTML, paths.srcPathOptions).pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('copy', gulp.series('sass', 'css', 'js', 'html'));
+gulp.task('copy', gulp.series('sass', 'css', 'js', 'img', 'html'));
 
 gulp.task('inject', gulp.series('copy', function(){
     var jqjs = gulp.src(paths.distJSjQuery, paths.srcPathOptions);
