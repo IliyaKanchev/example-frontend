@@ -43,3 +43,5 @@ gulp.task('serve', gulp.series('inject', function(){
 gulp.task('watch', gulp.series('serve', function(){
     gulp.watch(paths.app, gulp.series('inject'));
 }));
+
+gulp.task('default', gulp.series('watch'));
