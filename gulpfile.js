@@ -10,11 +10,16 @@ var paths = {
     appSASS: 'app/**/*.sass',
     appJS: 'app/**/*.js',
     appIndex: 'app/index.html',
+
+    bootstrapCSS: "node_modules/bootstrap/dist/css/*.min.css",
+    bootstrapJS: "node_modules/bootstrap/dist/js/*bundle.min.js",
   
     dist: 'dist',
     distIndex: 'dist/index.html',
     distCSS: 'dist/**/*.css',
     distJS: 'dist/**/*.js',
+    distJSPath: 'dist/js',
+    distCSSPath: 'dist/css',
 
     srcPathOptions: {
         allowEmpty: true
@@ -28,11 +33,11 @@ gulp.task('sass', function(){
 });
 
 gulp.task('css', function () {
-    return gulp.src(paths.appCSS, paths.srcPathOptions).pipe(gulp.dest(paths.distCSS));
+    return gulp.src([paths.appCSS, paths.bootstrapCSS], paths.srcPathOptions).pipe(gulp.dest(paths.distCSSPath));
 });
 
 gulp.task('js', function () {
-    return gulp.src(paths.appJS, paths.srcPathOptions).pipe(gulp.dest(paths.distJS));
+    return gulp.src([paths.appJS, paths.bootstrapJS], paths.srcPathOptions).pipe(gulp.dest(paths.distJSPath));;
 });
 
 gulp.task('html', function () {
@@ -48,8 +53,8 @@ gulp.task('inject', gulp.series('copy', function(){
     var options = { relative: false, ignorePath: ["dist"] };
 
     return gulp.src(paths.appIndex, paths.srcPathOptions)
-        .pipe(inject( css, options))
-        .pipe(inject( js, options))
+        .pipe(inject(css, options))
+        .pipe(inject(js, options))
         .pipe(gulp.dest(paths.dist));
 }));
 
