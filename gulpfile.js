@@ -14,7 +14,7 @@ var paths = {
 
     jQuery: "node_modules/jquery/dist/jquery.min.js",
 
-    bootstrapCSS: "node_modules/bootstrap/dist/css/*.min.css*",
+    bootstrapCSS: "node_modules/bootstrap/dist/css/bootstrap.min.css*",
     bootstrapJS: "node_modules/bootstrap/dist/js/*bundle.min.js",
   
     dist: 'dist',
