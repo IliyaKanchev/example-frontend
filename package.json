@@ -1,0 +1,25 @@
+{
+  "name": "example-frontend",
+  "version": "1.0.0",
+  "description": "A job interview assignment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IliyaKanchev/example-frontend.git"
+  },
+  "author": "Iliya Kanchev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IliyaKanchev/example-frontend/issues"
+  },
+  "homepage": "https://github.com/IliyaKanchev/example-frontend#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
