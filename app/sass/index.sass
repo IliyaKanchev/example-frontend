@@ -1,4 +1,18 @@
-.container
+$breakpoint-tablet: 768px;
+
+.hide-tablet
+    display: auto
+
+    @media screen and (max-width: $breakpoint-tablet)
+        display: none
+
+.show-tablet
+    display: auto
+
+    @media screen and (min-width: $breakpoint-tablet)
+        display: none
+    
+#contentContainer
     max-width: 1280px
 
 .navbar
