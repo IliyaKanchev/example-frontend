@@ -9,7 +9,7 @@ var paths = {
     appHTML: 'app/**/*.html',
     appCSS: 'app/**/*.css',
     appSASS: 'app/**/*.sass',
-    appJS: 'app/**/*.js',
+    appJS: 'app/js/*.js',
     appImg: [
         'app/**/*.svg',
         'app/**/*.png',
