@@ -13,7 +13,8 @@ var paths = {
     appImg: [
         'app/**/*.svg',
         'app/**/*.png',
-        'app/**/*.jpg'
+        'app/**/*.jpg',
+        'app/**/*.gif'
     ],
     appIndex: 'app/index.html',
 

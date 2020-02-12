@@ -1,5 +1,25 @@
 $breakpoint-tablet: 768px
 
+.aspect-ratio-box 
+    position: relative
+
+// Create a pseudo element that uses padding-bottom to take up space
+.aspect-ratio-box::after 
+    display: block
+    content: ''
+    // 2:1 aspect ratio (percentage = (100 / 2) * 1)
+    padding-bottom: 50%
+
+// Image is positioned absolutely relative to the parent element
+.aspect-ratio-box>img 
+    // Image should match parent box size
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    object-fit: contain
+
 .card>svg
     width: 100%
     height: 180px
@@ -15,9 +35,6 @@ $breakpoint-tablet: 768px
 
 .navbar
     width: 100%
-
-// .card
-//     width: 18rem
 
 .hide-tablet-image
     @media screen and (max-width: $breakpoint-tablet)
