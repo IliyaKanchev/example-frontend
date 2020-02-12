@@ -1,5 +1,13 @@
 $breakpoint-tablet: 768px
 
+body 
+    background-image: url("../img/macau-photo-agency-as5EWdBWKqk-unsplash.jpg")
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-color: #000000
+    background-position: center
+    overflow: hidden
+
 .aspect-ratio-box 
     position: relative
 
@@ -51,6 +59,10 @@ $breakpoint-tablet: 768px
 
     @media screen and (min-width: $breakpoint-tablet)
         display: none
+
+.scroller
+    max-height: 100vh
+    overflow-y: auto
     
 #contentContainer
     max-width: 1280px
